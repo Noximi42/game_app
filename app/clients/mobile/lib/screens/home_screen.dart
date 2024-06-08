@@ -19,6 +19,7 @@ class HomeScreen extends StatelessWidget {
             Button(
               type: ButtonTypes.primary,
               title: 'Create lobby',
+              icon: Icons.create,
               onPressed: () {
                 Navigator.push(
                     context,
@@ -29,6 +30,7 @@ class HomeScreen extends StatelessWidget {
             Button(
               type: ButtonTypes.primary,
               title: 'Join lobby',
+              icon: Icons.login,
               onPressed: () {
                 print('Join lobby pressed');
               },

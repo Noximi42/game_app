@@ -19,6 +19,7 @@ class LobbyScreen extends StatelessWidget {
             Button(
               type: ButtonTypes.primary,
               title: 'Back',
+              icon: Icons.arrow_back,
               onPressed: () {
                 Navigator.pop(context);
               },

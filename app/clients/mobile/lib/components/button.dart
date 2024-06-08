@@ -10,27 +10,37 @@ class Button extends StatelessWidget {
   final ButtonTypes type;
   final Color color;
   final String title;
+  final IconData? icon;
   final VoidCallback onPressed;
   const Button(
       {super.key,
       required this.type,
       this.color = AppColors.red,
       required this.title,
+      this.icon,
       required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
-    return ElevatedButton(
+    final textColor = type == ButtonTypes.primary
+        ? theme.colorScheme.secondary
+        : Colors.white;
+
+    return ElevatedButton.icon(
       style: ElevatedButton.styleFrom(
-          foregroundColor: type == ButtonTypes.primary
-              ? theme.colorScheme.secondary
-              : Colors.white,
+          foregroundColor: textColor,
           backgroundColor:
               type == ButtonTypes.primary ? theme.colorScheme.primary : color),
       onPressed: onPressed,
-      child: Text(title),
+      label: Text(title),
+      icon: icon != null
+          ? Icon(
+              icon,
+              color: textColor,
+            )
+          : null,
     );
   }
 }
