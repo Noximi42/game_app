@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/button.dart';
-import 'package:mobile/screens/lobby_screen.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class LobbyScreen extends StatelessWidget {
+  const LobbyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,21 +15,12 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const Text('Lobby Screen'),
             Button(
               type: ButtonTypes.primary,
-              title: 'Create lobby',
+              title: 'Back',
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const LobbyScreen()));
-              },
-            ),
-            Button(
-              type: ButtonTypes.primary,
-              title: 'Join lobby',
-              onPressed: () {
-                print('Join lobby pressed');
+                Navigator.pop(context);
               },
             ),
           ],
