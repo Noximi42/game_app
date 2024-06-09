@@ -10,8 +10,6 @@ class TextInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return TextField(
         decoration: InputDecoration(
             border: const OutlineInputBorder(), label: Text(label)));

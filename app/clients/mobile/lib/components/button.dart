@@ -28,19 +28,22 @@ class Button extends StatelessWidget {
         ? theme.colorScheme.secondary
         : Colors.white;
 
-    return ElevatedButton.icon(
-      style: ElevatedButton.styleFrom(
-          foregroundColor: textColor,
-          backgroundColor:
-              type == ButtonTypes.primary ? theme.colorScheme.primary : color),
-      onPressed: onPressed,
-      label: Text(title),
-      icon: icon != null
-          ? Icon(
-              icon,
-              color: textColor,
-            )
-          : null,
-    );
+    return SizedBox(
+        width: double.maxFinite,
+        child: ElevatedButton.icon(
+          style: ElevatedButton.styleFrom(
+              foregroundColor: textColor,
+              backgroundColor: type == ButtonTypes.primary
+                  ? theme.colorScheme.primary
+                  : color),
+          onPressed: onPressed,
+          label: Text(title),
+          icon: icon != null
+              ? Icon(
+                  icon,
+                  color: textColor,
+                )
+              : null,
+        ));
   }
 }
