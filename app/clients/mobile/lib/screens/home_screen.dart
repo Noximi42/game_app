@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/button.dart';
 import 'package:mobile/screens/lobby_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,7 +19,7 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             Button(
               type: ButtonTypes.primary,
-              title: 'Create lobby',
+              title: AppLocalizations.of(context)!.home_button_create_lobby,
               icon: Icons.create,
               onPressed: () {
                 Navigator.push(
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
             ),
             Button(
               type: ButtonTypes.primary,
-              title: 'Join lobby',
+              title: AppLocalizations.of(context)!.home_button_join_lobby,
               icon: Icons.login,
               onPressed: () {
                 print('Join lobby pressed');
