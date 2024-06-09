@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/button.dart';
+import 'package:mobile/components/text_input.dart';
 
 class LobbyScreen extends StatelessWidget {
   const LobbyScreen({super.key});
@@ -16,6 +17,7 @@ class LobbyScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text('Lobby Screen'),
+            const TextInput(label: 'Name'),
             Button(
               type: ButtonTypes.primary,
               title: 'Back',
