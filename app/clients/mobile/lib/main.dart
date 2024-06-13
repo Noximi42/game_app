@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:mobile/screens/home_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:mobile/state/user_state.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const GameApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => UserState(),
+    child: const GameApp(),
+  ));
 }
 
 class GameApp extends StatelessWidget {
