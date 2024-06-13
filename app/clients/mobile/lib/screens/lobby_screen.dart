@@ -10,7 +10,9 @@ class LobbyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        return Scaffold(
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: Scaffold(
           appBar: AppBar(
             backgroundColor: Theme.of(context).colorScheme.secondary,
             title: const Text('WHAT THE F*** IS THAT?'),
@@ -21,23 +23,29 @@ class LobbyScreen extends StatelessWidget {
                   child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  const Text('Lobby Screen'),
-                  Consumer<UserState>(
-                      builder: (context, user, _) => Text(user.userName)),
+                  const Text('Your user username is'),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10, bottom: 20),
+                    child: Consumer<UserState>(
+                        builder: (context, user, _) => Text(user.username)),
+                  ),
                   TextInput(
                       label: 'Name',
                       onChanged: Provider.of<UserState>(context, listen: false)
-                          .setUserName),
-                  Button(
-                    type: ButtonTypes.primary,
-                    title: 'Back',
-                    icon: Icons.arrow_back,
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
+                          .setUsername),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
+                    child: Button(
+                      type: ButtonTypes.primary,
+                      title: 'Back',
+                      icon: Icons.arrow_back,
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
                   ),
                 ],
-              ))),
-        );
+              )))),
+    );
   }
 }

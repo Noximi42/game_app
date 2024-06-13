@@ -31,13 +31,16 @@ class HomeScreen extends StatelessWidget {
                             builder: (context) => const LobbyScreen()));
                   },
                 ),
-                Button(
-                  type: ButtonTypes.primary,
-                  title: AppLocalizations.of(context)!.home_button_join_lobby,
-                  icon: Icons.login,
-                  onPressed: () {
-                    print('Join lobby pressed');
-                  },
+                Padding(
+                padding: const EdgeInsets.only(top: 20),
+                  child: Button(
+                    type: ButtonTypes.primary,
+                    title: AppLocalizations.of(context)!.home_button_join_lobby,
+                    icon: Icons.login,
+                    onPressed: () {
+                      print('Join lobby pressed');
+                    },
+                  ),
                 ),
               ],
             ),

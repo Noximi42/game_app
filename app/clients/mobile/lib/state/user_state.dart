@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class UserState extends ChangeNotifier {
-  String _userName = "";
+  String _username = "";
 
-  String get userName => _userName;
+  String get username => _username;
 
-  void setUserName(String userName) {
-    _userName = userName;
+  void setUsername(String username) {
+    _username = username;
     notifyListeners();
   }
 }
