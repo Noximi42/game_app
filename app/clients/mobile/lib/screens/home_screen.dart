@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/components/button.dart';
+import 'package:mobile/constants/spacing.dart';
 import 'package:mobile/screens/lobby_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -13,32 +14,34 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.secondary,
         title: const Text('WHAT THE F*** IS THAT?'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Button(
-              type: ButtonTypes.primary,
-              title: AppLocalizations.of(context)!.home_button_create_lobby,
-              icon: Icons.create,
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const LobbyScreen()));
-              },
+      body: Padding(
+          padding: const EdgeInsets.all(Spacing.screenMargin),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Button(
+                  type: ButtonTypes.primary,
+                  title: AppLocalizations.of(context)!.home_button_create_lobby,
+                  icon: Icons.create,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LobbyScreen()));
+                  },
+                ),
+                Button(
+                  type: ButtonTypes.primary,
+                  title: AppLocalizations.of(context)!.home_button_join_lobby,
+                  icon: Icons.login,
+                  onPressed: () {
+                    print('Join lobby pressed');
+                  },
+                ),
+              ],
             ),
-            Button(
-              type: ButtonTypes.primary,
-              title: AppLocalizations.of(context)!.home_button_join_lobby,
-              icon: Icons.login,
-              onPressed: () {
-                print('Join lobby pressed');
-              },
-            ),
-          ],
-        ),
-      ),
+          )),
     );
   }
 }
