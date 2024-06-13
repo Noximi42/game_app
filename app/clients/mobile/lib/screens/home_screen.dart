@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
         title: const Text('WHAT THE F*** IS THAT?'),
       ),
       body: Padding(
-          padding: const EdgeInsets.all(Spacing.screenMargin),
+          padding: const EdgeInsets.all(Spacing.screenPadding),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

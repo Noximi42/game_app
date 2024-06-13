@@ -1,3 +1,3 @@
 class Spacing {
-  static const double screenMargin = 20;
+  static const double screenPadding = 20;
 }
