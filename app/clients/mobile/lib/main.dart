@@ -27,6 +27,7 @@ class GameApp extends StatelessWidget {
             brightness: Brightness.light),
         scaffoldBackgroundColor: Colors.white,
         useMaterial3: true,
+        fontFamily: 'RobotoMono',
       ),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
@@ -36,6 +37,7 @@ class GameApp extends StatelessWidget {
             brightness: Brightness.dark),
         scaffoldBackgroundColor: Colors.black,
         useMaterial3: true,
+        fontFamily: 'RobotoMono',
       ),
       themeMode: ThemeMode.dark,
       localizationsDelegates: const [
