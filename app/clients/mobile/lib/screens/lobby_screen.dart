@@ -31,6 +31,9 @@ class LobbyScreen extends StatelessWidget {
                   ),
                   TextInput(
                       label: 'Name',
+                      initialValue:
+                          Provider.of<UserState>(context, listen: false)
+                              .username,
                       onChanged: Provider.of<UserState>(context, listen: false)
                           .setUsername),
                   Padding(
