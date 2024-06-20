@@ -36,9 +36,8 @@ class LobbyScreen extends StatelessWidget {
                           Provider.of<UserState>(context, listen: false)
                               .user
                               .name,
-                      onChanged: (text) =>
-                          Provider.of<UserState>(context, listen: false)
-                              .setUser(User(id: 'user-1', name: text))),
+                      onChanged: Provider.of<UserState>(context, listen: false)
+                          .setUserName),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Button(

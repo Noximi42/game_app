@@ -6,6 +6,10 @@ class UserState extends ChangeNotifier {
 
   User get user => _user;
 
+  void setUserName(String name) {
+    setUser(User(id: user.id, name: name));
+  }
+
   void setUser(User user) {
     _user = user;
     notifyListeners();
