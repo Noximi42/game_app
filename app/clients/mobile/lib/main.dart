@@ -50,7 +50,38 @@ class GameApp extends StatelessWidget {
         Locale('en'),
         Locale('de'),
       ],
-      home: const HomeScreen(),
+      home: const InitStateFromDb(initialAppWidget: HomeScreen()),
+    );
+  }
+}
+
+class InitStateFromDb extends StatelessWidget {
+  final Widget initialAppWidget;
+
+  const InitStateFromDb({super.key, required this.initialAppWidget});
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: Provider.of<UserState>(context, listen: false).loadFromDb(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) return initialAppWidget;
+
+        return Scaffold(
+            body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const CircularProgressIndicator(),
+              Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: Text(
+                    AppLocalizations.of(context)!.loading,
+                  ))
+            ],
+          ),
+        ));
+      },
     );
   }
 }

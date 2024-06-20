@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/models/user.dart';
 
 class UserState extends ChangeNotifier {
-  String _username = "";
+  User _user = const User(id: "user-1", name: "");
 
-  String get username => _username;
+  User get user => _user;
 
-  void setUsername(String username) {
-    _username = username;
+  void setUser(User user) {
+    _user = user;
     notifyListeners();
+    User.upsertUser(user);
+  }
+
+  Future<bool> loadFromDb() async {
+    _user = await User.getUser();
+    return true;
   }
 }

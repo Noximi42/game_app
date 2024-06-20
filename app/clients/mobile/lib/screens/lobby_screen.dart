@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mobile/components/button.dart';
 import 'package:mobile/components/text_input.dart';
 import 'package:mobile/constants/spacing.dart';
+import 'package:mobile/models/user.dart';
 import 'package:mobile/state/user_state.dart';
 import 'package:provider/provider.dart';
 
@@ -27,15 +28,17 @@ class LobbyScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 10, bottom: 20),
                     child: Consumer<UserState>(
-                        builder: (context, user, _) => Text(user.username)),
+                        builder: (context, user, _) => Text(user.user.name)),
                   ),
                   TextInput(
                       label: 'Name',
                       initialValue:
                           Provider.of<UserState>(context, listen: false)
-                              .username,
-                      onChanged: Provider.of<UserState>(context, listen: false)
-                          .setUsername),
+                              .user
+                              .name,
+                      onChanged: (text) =>
+                          Provider.of<UserState>(context, listen: false)
+                              .setUser(User(id: 'user-1', name: text))),
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: Button(
