@@ -65,7 +65,7 @@ class InitStateFromDb extends StatelessWidget {
     return FutureBuilder(
       future: Provider.of<UserState>(context, listen: false).loadFromDb(),
       builder: (context, snapshot) {
-        if (!snapshot.hasData) return initialAppWidget;
+        if (snapshot.hasData) return initialAppWidget;
 
         return Scaffold(
             body: Center(
