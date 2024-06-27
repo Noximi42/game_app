@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/components/button.dart';
+import 'package:mobile/components/controls/button.dart';
 import 'package:mobile/constants/spacing.dart';
 import 'package:mobile/screens/lobby_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
                 Padding(
-                padding: const EdgeInsets.only(top: 20),
+                  padding: const EdgeInsets.only(top: 20),
                   child: Button(
                     type: ButtonTypes.primary,
                     title: AppLocalizations.of(context)!.home_button_join_lobby,
