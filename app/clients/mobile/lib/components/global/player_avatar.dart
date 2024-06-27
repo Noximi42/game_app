@@ -5,10 +5,7 @@ import 'package:mobile/models/player.dart';
 class PlayerAvatar extends StatelessWidget {
   final Player player;
   final bool hideValue;
-  const PlayerAvatar(
-      {super.key,
-      required this.player,
-      this.hideValue = false});
+  const PlayerAvatar({super.key, required this.player, this.hideValue = false});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +14,14 @@ class PlayerAvatar extends StatelessWidget {
         Container(
           width: 100,
           height: 100,
-          decoration:
-              const BoxDecoration(color: AppColors.red, shape: BoxShape.circle),
+          decoration: const BoxDecoration(
+              color: AppColors.purple, shape: BoxShape.circle),
           child: Center(
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: Text(
-                player.value, 
-                textAlign: TextAlign.center, 
+                player.value,
+                textAlign: TextAlign.center,
                 style: const TextStyle(fontWeight: FontWeight.bold),
               ),
             ),

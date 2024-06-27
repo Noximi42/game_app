@@ -17,6 +17,17 @@ class GameState extends ChangeNotifier {
     _game = Game(id: "d59o", players: [player, ...testPlayers]);
   }
 
+  void startGame() {
+    if (game.players.isEmpty) {
+      return;
+    }
+
+    setGame(Game(
+        id: game.id,
+        players: game.players,
+        activePlayerId: game.players.first.id));
+  }
+
   void setGame(Game game) {
     _game = game;
     notifyListeners();

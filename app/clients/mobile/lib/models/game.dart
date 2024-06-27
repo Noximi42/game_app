@@ -5,10 +5,12 @@ import 'package:sqflite/sqflite.dart';
 class Game {
   final String id;
   final List<Player> players;
+  final String? activePlayerId;
 
   const Game({
     required this.id,
     required this.players,
+    this.activePlayerId,
   });
 
   Map<String, Object?> toMap() {

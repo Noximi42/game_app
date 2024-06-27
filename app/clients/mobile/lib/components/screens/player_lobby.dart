@@ -5,12 +5,14 @@ import 'package:mobile/state/game_state.dart';
 import 'package:provider/provider.dart';
 
 class PlayerLobby extends StatelessWidget {
-  final VoidCallback onStartGame;
-
-  const PlayerLobby({super.key, required this.onStartGame});
+  const PlayerLobby({super.key});
 
   @override
   Widget build(BuildContext context) {
+    void startGame() {
+      Provider.of<GameState>(context, listen: false).startGame();
+    }
+
     return Column(children: <Widget>[
       Padding(
         padding: const EdgeInsets.only(top: 10, bottom: 40),
@@ -38,7 +40,7 @@ class PlayerLobby extends StatelessWidget {
         child: Button(
           type: ButtonTypes.accent,
           title: "Start Game",
-          onPressed: onStartGame,
+          onPressed: startGame,
         ),
       )
     ]);
