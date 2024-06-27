@@ -6,6 +6,8 @@ class GameState extends ChangeNotifier {
   Game _game = const Game(id: "", players: []);
 
   Game get game => _game;
+  Player get activePlayer =>
+      game.players.firstWhere((p) => p.id == game.activePlayerId);
 
   void createGame(Player player) {
     var testPlayers = [
@@ -25,7 +27,7 @@ class GameState extends ChangeNotifier {
     setGame(Game(
         id: game.id,
         players: game.players,
-        activePlayerId: game.players.first.id));
+        activePlayerId: game.players[1].id));
   }
 
   void setGame(Game game) {
